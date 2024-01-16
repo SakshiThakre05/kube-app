@@ -16,7 +16,11 @@ spec:
     spec:
       containers:
         - name: vprodb
-          image: imranvisualpath/vprofile/vprofiledb:V1
+          image: vprofile/vprofiledb:V1
+          resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: vpro-db-data
